@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>English Portfolio – 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,7 +12,6 @@
       color: #e5e7eb;
       line-height: 1.6;
       margin: 0;
-      padding: 0;
     }
 
     header {
@@ -36,7 +36,7 @@
     }
 
     nav a {
-      margin-right: 0.5rem;
+      margin-right: 0.6rem;
       color: #93c5fd;
       text-decoration: none;
       font-size: 0.9rem;
@@ -56,7 +56,6 @@
     }
 
     h3 {
-      margin-bottom: 0.3rem;
       margin-top: 1rem;
       color: #93c5fd;
     }
@@ -65,20 +64,29 @@
       padding-left: 1.2rem;
     }
 
+    /* GALLERY FIX */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 0.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
       margin-top: 1rem;
     }
 
     .photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #334155;
       background: #020617;
-      border: 1px dashed #334155;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.8rem;
-      border-radius: 8px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     footer {
@@ -89,6 +97,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -116,20 +125,20 @@
 
   <h3>Highlights</h3>
   <ul>
-    <li><strong>Windsurfing:</strong> I went windsurfing.</li>
-    <li><strong>Training:</strong> I trained a lot. Gym, running and BJJ. I tried to stay consistent.</li>
-    <li><strong>Birthday:</strong> I turned 18, which was a big step for me. I also got my pager as a firefighter.</li>
+    <li><strong>Windsurfing:</strong> I went windsurfing during summer. It was harder than it looks, but very fun. Balance and control are important.</li>
+    <li><strong>Training:</strong> I trained a lot in the gym, running, and BJJ. I tried to stay consistent even on hard days.</li>
+    <li><strong>Birthday:</strong> I turned 18. This was a big milestone and I also got my firefighter pager.</li>
   </ul>
 
   <h3>Lowlight</h3>
   <p>
-    I lost in training against someone with more experience.  
-    It was annoying but also kind of funny 🤣.
+    I lost in training against someone with more experience.
+    It was frustrating, but also kind of funny 🤣.
   </p>
 
   <h3>Solution</h3>
   <p>
-    Train more.
+    Train more and stay disciplined. Losing shows where I need to improve.
   </p>
 </section>
 
@@ -137,38 +146,47 @@
   <h2>Portfolio Entry #2 – English Around the World</h2>
 
   <p>
-    I chose <strong>Australia</strong>. Australian English is known for slang and short words.
-    People speak very relaxed and friendly.
+    I chose Australia. Australian English is known for slang and short words.
+    The language sounds relaxed and friendly.
   </p>
 
   <h3>Examples</h3>
   <ul>
-    <li><strong>Mate</strong> – friend (used all the time)</li>
+    <li><strong>Mate</strong> – friend</li>
     <li><strong>Arvo</strong> – afternoon</li>
     <li><strong>Brekky</strong> – breakfast</li>
     <li><strong>No worries</strong> – no problem</li>
   </ul>
 
   <p>
-    Australian English fits well to sport and outdoor lifestyle.
-    It sounds casual and direct.
+    Australian English fits well with sport and outdoor lifestyle.
   </p>
 </section>
 
 <section id="e3">
   <h2>Portfolio Entry #3 – Emotions</h2>
 
-  <h3>Devastated</h3>
+  <h3>Disappointed</h3>
   <p>
-    When I broke my wrist snowboarding, I felt devastated.
-    I couldn’t train properly and had to slow down.
-    It was frustrating because sport is very important to me.
+    During some BJJ competitions, I felt disappointed.
+    I trained hard and still lost fights I thought I could win.
+    Losing in competition feels much worse than losing in training.
+  </p>
+
+  <p>
+    After the matches, I thought a lot about my mistakes.
+    Small details made the difference.
+    Even though it was frustrating, it helped me see where I need to improve.
   </p>
 
   <h3>Delighted</h3>
   <p>
-    I felt delighted when I got my firefighter pager and when I signed sponsors.
-    It showed me that my work and discipline are paying off.
+    I also felt delighted when I won fights.
+    Stepping on the mat, staying calm, and performing well gave me confidence.
+  </p>
+
+  <p>
+    Competing helped me grow mentally and physically.
   </p>
 </section>
 
@@ -176,12 +194,13 @@
   <h2>Portfolio Entry #4 – Conditional Story</h2>
 
   <p>
-    If I hadn’t broken my wrist, I would have continued training without a break.
-    I probably wouldn’t have learned how important recovery and mobility are.
+    If I hadn’t competed in BJJ this year, I would have stayed in my comfort zone.
+    I wouldn’t have learned how to deal with pressure.
   </p>
 
   <p>
-    The injury slowed me down, but it also made me smarter in training.
+    Because I did compete, I improved faster.
+    Every match showed me what works and what doesn’t.
   </p>
 </section>
 
@@ -190,20 +209,20 @@
 
   <h3>Present</h3>
   <ul>
-    <li>I wish I had more time for everything.</li>
-    <li>I wish I were already fully injury-free.</li>
+    <li>I wish I had more time for training and school.</li>
+    <li>I wish I were always fully recovered.</li>
   </ul>
 
   <h3>Annoying things</h3>
   <ul>
-    <li>I wish distractions would stop when I need to focus.</li>
-    <li>I wish small injuries wouldn’t keep coming back.</li>
+    <li>I wish distractions would stop when I want to focus.</li>
+    <li>I wish injuries wouldn’t slow me down.</li>
   </ul>
 
   <h3>Past regrets</h3>
   <ul>
-    <li>I wish I hadn’t ignored mobility work before.</li>
-    <li>I wish I had started some projects earlier.</li>
+    <li>I wish I hadn’t ignored mobility training before.</li>
+    <li>I wish I had planned some projects earlier.</li>
   </ul>
 </section>
 
@@ -216,8 +235,7 @@
   </p>
 
   <p>
-    Swiss tap water is very clean and high quality.
-    Free water would also be healthier for people.
+    Swiss tap water is clean and high quality.
   </p>
 </section>
 
@@ -225,12 +243,12 @@
   <h2>Portfolio Entry #7 – Tariffs</h2>
 
   <p>
-    Tariffs can help local businesses, but they can also make products more expensive.
-    For small brands, tariffs can be a big problem when selling internationally.
+    Tariffs can help local businesses but also make products more expensive.
+    For small brands, this can be a problem.
   </p>
 
   <p>
-    We should think smart about trade and not just in simple black-and-white ways.
+    Trade should be fair and well thought out.
   </p>
 </section>
 
@@ -238,12 +256,12 @@
   <h2>Portfolio Entry #8 – Deepfakes</h2>
 
   <p>
-    Deepfakes are videos made with AI that look very real.
+    Deepfakes are AI-generated videos that look very real.
     They can be useful, but also dangerous.
   </p>
 
   <p>
-    For people who work online and with sponsors, protecting your image is very important.
+    For people working online, protecting your image is important.
   </p>
 
   <p>
@@ -258,25 +276,24 @@
 
   <p>
     I listened to Bad Bunny from the Pitchfork list.
-    Some songs were in my BJJ class playlists.
+    Some songs were in my BJJ playlists.
   </p>
 
   <p>
-    I don’t like most albums from the list because they are too slow.
-    I need fast music with energy and strong beats.
+    Most albums are too slow for me.
+    I prefer fast music with energy.
   </p>
 
   <p>
-    A song I listened to the most is <strong>The King's Affirmation by Iniko</strong>.
-    I use it before competitions and when training alone.
-    Sometimes I play it on repeat for hours.
+    The song I listened to the most is <strong>The King's Affirmation by Iniko</strong>.
+    I use it before competitions and during solo training.
   </p>
 
   <h3>Best things of 2025</h3>
   <ul>
-    <li>Getting more big sponsors</li>
+    <li>Getting more sponsors</li>
     <li>Becoming a firefighter</li>
-    <li>Great fights and competitions</li>
+    <li>Good BJJ competitions</li>
     <li>Signing my first agency</li>
     <li>Growing closer with my girlfriend</li>
   </ul>
@@ -286,26 +303,26 @@
   <h2>Portfolio Entry #10 – Photo Dump 2025</h2>
 
   <p>
-    This is a small photo dump of my year.
-    Training, competitions, firefighter life and personal moments.
+    A small photo dump of my year.
+    Training, competitions and personal moments.
   </p>
 
   <div class="gallery">
-  <div class="photo"><img src="images/1.jpg" alt="Photo 1"></div>
-  <div class="photo"><img src="images/2.jpg" alt="Photo 2"></div>
-  <div class="photo"><img src="images/3.jpg" alt="Photo 3"></div>
-  <div class="photo"><img src="images/4.jpg" alt="Photo 4"></div>
-  <div class="photo"><img src="images/5.jpg" alt="Photo 5"></div>
-  <div class="photo"><img src="images/6.jpg" alt="Photo 6"></div>
-  <div class="photo"><img src="images/7.jpg" alt="Photo 7"></div>
-  <div class="photo"><img src="images/8.jpg" alt="Photo 8"></div>
-  <div class="photo"><img src="images/9.jpg" alt="Photo 9"></div>
-  <div class="photo"><img src="images/10.jpg" alt="Photo 10"></div>
-  <div class="photo"><img src="images/11.jpg" alt="Photo 11"></div>
-  <div class="photo"><img src="images/12.jpg" alt="Photo 12"></div>
-  <div class="photo"><img src="images/13.jpg" alt="Photo 13"></div>
-  <div class="photo"><img src="images/14.jpg" alt="Photo 14"></div>
-</div>
+    <div class="photo"><img src="images/1.jpg" alt="Photo 1"></div>
+    <div class="photo"><img src="images/2.jpg" alt="Photo 2"></div>
+    <div class="photo"><img src="images/3.jpg" alt="Photo 3"></div>
+    <div class="photo"><img src="images/4.jpg" alt="Photo 4"></div>
+    <div class="photo"><img src="images/5.jpg" alt="Photo 5"></div>
+    <div class="photo"><img src="images/6.jpg" alt="Photo 6"></div>
+    <div class="photo"><img src="images/7.jpg" alt="Photo 7"></div>
+    <div class="photo"><img src="images/8.jpg" alt="Photo 8"></div>
+    <div class="photo"><img src="images/9.jpg" alt="Photo 9"></div>
+    <div class="photo"><img src="images/10.jpg" alt="Photo 10"></div>
+    <div class="photo"><img src="images/11.jpg" alt="Photo 11"></div>
+    <div class="photo"><img src="images/12.jpg" alt="Photo 12"></div>
+    <div class="photo"><img src="images/13.jpg" alt="Photo 13"></div>
+    <div class="photo"><img src="images/14.jpg" alt="Photo 14"></div>
+  </div>
 </section>
 
 </div>
