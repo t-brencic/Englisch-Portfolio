@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>English Portfolio – 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: radial-gradient(circle at top, #1d4ed8, #020617 55%);
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0.5rem auto 0;
+      color: #cbd5f5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.5rem 2rem;
+    }
+
+    nav {
+      background: rgba(15,23,42,0.95);
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+      padding: 1rem 1.5rem;
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0.75rem;
+      z-index: 20;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.75rem;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: rgba(15,23,42,0.85);
+      color: #e5e7eb;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+
+    nav a:hover {
+      background: #1d4ed8;
+      border-color: #60a5fa;
+      transform: translateY(-1px);
+    }
+
+    .entries {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .entry {
+      background: linear-gradient(135deg, #020617, #020617 55%, #111827);
+      border-radius: 1.5rem;
+      padding: 1.75rem 1.6rem;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 18px 35px rgba(15,23,42,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .entry::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .entry-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .entry-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .entry-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .entry-meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      margin-right: 0.3rem;
+      margin-top: 0.25rem;
+    }
+
+    .tag--highlight {
+      border-color: #60a5fa;
+      color: #bfdbfe;
+    }
+
+    .entry h3 {
+      font-size: 1rem;
+      margin-top: 0.9rem;
+      margin-bottom: 0.25rem;
+      color: #bfdbfe;
+    }
+
+    .entry p {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-top: 0.25rem;
+    }
+
+    .entry ul {
+      margin-top: 0.35rem;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    .entry li {
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-box {
+      border-radius: 1rem;
+      border: 1px dashed rgba(148,163,184,0.5);
+      padding: 0.75rem 0.9rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      background: rgba(15,23,42,0.8);
+    }
+
+    .quote {
+      border-left: 3px solid #60a5fa;
+      padding-left: 0.75rem;
+      margin-top: 0.65rem;
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      font-style: italic;
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 720px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    .gallery {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .gallery {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: #020617;
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+      padding: 0.75rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.75rem 1rem 2.5rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>English Portfolio 2025</h1>
+  <p>
+    A collection of portfolio entries about my training, work, travels, emotions,
+    and the projects that shaped my year.
+  </p>
+</header>
+
+<div class="container">
+  <nav>
+    <ul>
+      <li><a href="#entry1">1. Summer Update</a></li>
+      <li><a href="#entry2">2. English Around the World</a></li>
+      <li><a href="#entry3">3. Emotions</a></li>
+      <li><a href="#entry4">4. Conditional Story</a></li>
+      <li><a href="#entry5">5. Wishes</a></li>
+      <li><a href="#entry6">6. Tap Water</a></li>
+      <li><a href="#entry7">7. Tariffs / Louvre / Jamaica</a></li>
+      <li><a href="#entry8">8. Deepfakes</a></li>
+      <li><a href="#entry9">9. Best of 2025</a></li>
+      <li><a href="#entry10">10. Photo Dump</a></li>
+    </ul>
+  </nav>
+
+  <main class="entries">
+
+    <!-- ENTRY 1 -->
+    <section id="entry1" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #1 – Summer Update</div>
+          <div class="entry-meta">Highlights &amp; lessons from my summer</div>
+        </div>
+
+        <span class="tag tag--highlight">Summer</span>
+        <span class="tag">Sport</span>
+        <span class="tag">Personal Growth</span>
+
+        <h3>Highlights</h3>
+        <ul>
+          <li><strong>Windsurfing:</strong> I spent time on the water, fighting with the wind and trying to control the sail. It was challenging, but the feeling of gliding over the lake was worth it.</li>
+          <li><strong>Training:</strong> I kept working on my hybrid athlete lifestyle: strength training, running, and Brazilian Jiu-Jitsu. Even in the heat, I tried to stay consistent.</li>
+          <li><strong>Birthday:</strong> I celebrated my 18th birthday, which was an important milestone. Turning 18 also meant new responsibilities, especially as a firefighter and first responder.</li>
+        </ul>
+
+        <h3>Lowlight</h3>
+        <p>
+          In training, I did not win against someone with more experience. It was a bit frustrating
+          and also funny at the same time because I gave my best and still got destroyed 🤣.
+        </p>
+
+        <h3>Solution</h3>
+        <p>
+          The only real solution is simple: <strong>train more</strong>. Losing to people with more experience
+          shows me exactly where I need to improve. It motivates me to come back stronger next time.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENTRY 2 -->
+    <section id="entry2" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #2 – English Around the World</div>
+          <div class="entry-meta">Australian English – slang and identity</div>
+        </div>
+
+        <span class="tag tag--highlight">English Around the World</span>
+        <span class="tag">Australia</span>
+
+        <p>
+          For this entry, I chose <strong>Australian English</strong>. It is famous for its relaxed
+          pronunciation, unique slang, and short forms of words. Many of these expressions show the
+          Australian lifestyle: informal, direct, and friendly.
+        </p>
+
+        <h3>Slang &amp; examples</h3>
+        <ul>
+          <li><strong>“Arvo”</strong> – afternoon.  
+            Example: “Let’s train this arvo before it gets too hot.”</li>
+          <li><strong>“Mate”</strong> – friend / buddy, used all the time, even with strangers.  
+            Example: “Thanks, mate!”</li>
+          <li><strong>“No worries”</strong> – it’s okay, no problem.  
+            Example: “No worries, mate, we can do it tomorrow.”</li>
+          <li><strong>“Brekky”</strong> – breakfast.  
+            Example: “I need a good brekky before my run.”</li>
+        </ul>
+
+        <p>
+          Australian English often cuts words short and adds <strong>-o</strong> or <strong>-y/-ie</strong>. This gives
+          the language a friendly rhythm. If I ever visit Australia, I will probably hear more slang on the
+          street than in any textbook.
+        </p>
+
+        <div class="highlight-box">
+          For me as someone who likes sport and outdoor life, Australian English feels close to my world:
+          relaxed, direct, and always ready for another training session in the sun.
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRY 3 -->
+    <section id="entry3" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #3 – Emotions</div>
+          <div class="entry-meta">Two strong emotional experiences</div>
+        </div>
+
+        <span class="tag tag--highlight">Emotions</span>
+        <span class="tag">Sport</span>
+        <span class="tag">Life</span>
+
+        <div class="grid-2">
+          <div>
+            <h3>Devastated – breaking my wrist</h3>
+            <p>
+              Last season when I tried snowboarding, I fell and broke my wrist. At that time I was very focused
+              on training and performance, so this injury felt like a disaster. I was <strong>devastated</strong> because
+              I had to stop a lot of things: lifting weights, doing BJJ properly, and progressing like I had planned.
+            </p>
+            <p>
+              The injury reminded me that one bad moment can change months of training. But it also taught me patience,
+              discipline in recovery, and respect for my body.
+            </p>
+          </div>
+          <div>
+            <h3>Delighted – becoming a firefighter &amp; getting sponsors</h3>
+            <p>
+              Another strong emotion for me in 2025 was feeling <strong>delighted</strong> and proud. I received my pager
+              as a firefighter when I turned 18, which made my role as a first responder official. It was a big step in
+              responsibility and service to my community.
+            </p>
+            <p>
+              At the same time, I managed to sign more sponsors and even an agency to help manage them. As a young
+              hybrid athlete, being taken seriously by brands was a huge confirmation that my hard work is visible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRY 4 -->
+    <section id="entry4" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #4 – Conditional Story</div>
+          <div class="entry-meta">A “what if” about my injury</div>
+        </div>
+
+        <span class="tag tag--highlight">Conditional 3</span>
+        <span class="tag">Reflection</span>
+
+        <p class="quote">
+          If I <strong>hadn't broken</strong> my wrist while snowboarding, I <strong>would have spent</strong> the whole winter
+          season on the slopes and I probably <strong>wouldn't have learned</strong> so much about patience and recovery.
+        </p>
+
+        <p>
+          If I hadn’t taken that fall, my winter would have looked very different. I would have kept pushing my
+          body hard almost every day – snowboarding, training, and maybe overdoing it. I would have focused mainly
+          on speed and performance, not on long-term health.
+        </p>
+
+        <p>
+          Because I did break my wrist, I was forced to slow down. I spent more time working on mental strength,
+          planning my Elba Island project, and learning how important mobility and prehab are.  
+          In the end, if I hadn't had this injury, I might have stayed the same. With it, I had to grow.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENTRY 5 -->
+    <section id="entry5" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #5 – Wishes</div>
+          <div class="entry-meta">Present, annoying things &amp; past regrets</div>
+        </div>
+
+        <span class="tag tag--highlight">Grammar – Wishes</span>
+
+        <h3>Two wishes for the present</h3>
+        <ul>
+          <li>I wish I <strong>had</strong> more time in a day so I could balance training, firefighting, school, and business more easily.</li>
+          <li>I wish I <strong>were</strong> already strong enough to run around Elba Island without worrying about injuries.</li>
+        </ul>
+
+        <h3>Two wishes for annoying things</h3>
+        <ul>
+          <li>I wish my phone <strong>would stop</strong> distracting me when I want to focus on studying or planning my projects.</li>
+          <li>I wish minor injuries and soreness <strong>wouldn't keep</strong> slowing down my training progress.</li>
+        </ul>
+
+        <h3>Two wishes for past regrets</h3>
+        <ul>
+          <li>I wish I <strong>hadn't ignored</strong> stretching and mobility work earlier; it would have saved me a lot of pain.</li>
+          <li>I wish I <strong>hadn't underestimated</strong> some school projects; doing them properly from the start would have reduced stress later.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENTRY 6 -->
+    <section id="entry6" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #6 – Tap Water in Swiss Restaurants</div>
+          <div class="entry-meta">Should it be free?</div>
+        </div>
+
+        <span class="tag tag--highlight">Discussion</span>
+        <span class="tag">Switzerland</span>
+
+        <p>
+          I believe tap water should be free in Swiss restaurants. The main reason is that when you go out to eat,
+          you are already paying for a meal and often for other drinks too. Some fresh water from the tap should
+          always be included as a basic service.
+        </p>
+
+        <p>
+          Switzerland has very high-quality drinking water. It makes little sense to charge extra for something
+          that is already safe and available everywhere. Free tap water could also encourage people to drink less
+          sugary drinks, which would be better for their health.
+        </p>
+
+        <p>
+          Personally, I would probably order more water if it was free. For someone who trains a lot and cares
+          about performance and health, staying hydrated is essential. Having easy access to water in restaurants
+          would support that lifestyle without making everything more expensive.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENTRY 7 -->
+    <section id="entry7" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #7 – Tariffs and Small Brands</div>
+          <div class="entry-meta">Thinking beyond the “caveman” level</div>
+        </div>
+
+        <span class="tag tag--highlight">Tariffs</span>
+        <span class="tag">Business</span>
+
+        <p>
+          As someone who works with sponsors and is interested in business, I see tariffs as something that can
+          both protect and hurt companies. Tariffs are taxes on imported goods. In theory, they can protect local
+          businesses from cheap foreign products. But they can also make it harder for small brands to grow
+          internationally.
+        </p>
+
+        <p>
+          For example, if a small Swiss brand wants to sell products abroad, tariffs can make their items more
+          expensive and less attractive for customers in another country. On the other hand, if Switzerland
+          places tariffs on foreign products, it might help local producers but also raise prices for consumers.
+        </p>
+
+        <p>
+          In my opinion, we should stop “acting like cavemen” and only thinking in simple “good vs. bad”.
+          Tariffs are a tool. The real question is how to design trade rules so that they support innovation,
+          fair competition, and small companies – not only big corporations.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENTRY 8 -->
+    <section id="entry8" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #8 – Deepfakes</div>
+          <div class="entry-meta">AI videos and identity</div>
+        </div>
+
+        <span class="tag tag--highlight">Technology</span>
+        <span class="tag">AI &amp; Media</span>
+
+        <p>
+          In this task I worked with a deepfake-style video using an AI tool (HeyGen). The idea of deepfakes is
+          that artificial intelligence can create very realistic videos of people saying or doing things they
+          never actually said or did.
+        </p>
+
+        <p>
+          These tools can be used for positive things, for example to create content faster, to localize
+          marketing videos, or to make fun short clips. But they also have a dangerous side: people can use
+          them to spread fake news, to damage someone’s reputation, or to create illegal content.
+        </p>
+
+        <div class="highlight-box">
+          As someone active on social media and working with sponsors, deepfakes are a serious topic for me.
+          Protecting my identity and my image online is becoming more and more important as AI tools get better.
+        </div>
+
+        <p>
+          Link to the video I used in this task:  
+          <a href="https://app.heygen.com/videos/293eda4a18404e5ba6a730f277ead12c" target="_blank" rel="noopener">
+            View the HeyGen video
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ENTRY 9 -->
+    <section id="entry9" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #9 – Best Albums &amp; Best Moments of 2025</div>
+          <div class="entry-meta">Music and personal highlights</div>
+        </div>
+
+        <span class="tag tag--highlight">Music</span>
+        <span class="tag">2025 Highlights</span>
+
+        <h3>Pitchfork’s Best Albums of 2025</h3>
+        <p>
+          From Pitchfork’s list (for example <em>Los Thuthanaka</em>, Dijon’s <em>Baby</em>, Bad Bunny’s
+          <em>DeBÍ TiRAR MáS FOToS</em>, or Oklou’s <em>Choke Enough</em>), I have listened to Bad Bunny.
+          A few of his songs were in the playlist I used in the BJJ classes I gave.
+        </p>
+
+        <p>
+          In general, I do not really like most of the albums on that list. I find many of them too slow.  
+          For training, I need music with <strong>energy, high pace, and strong beats</strong>. If the song
+          does not push me, it does not stay in my playlist.
+        </p>
+
+        <h3>An album/song that should be on the list</h3>
+        <p>
+          One song from 2025 that I think deserves more attention is <strong>“The King's Affirmation” by Iniko</strong>.
+          It is not just a normal track for me. It became a tool:
+        </p>
+        <ul>
+          <li>Before competitions, I use it to calm myself down and focus.</li>
+          <li>When I train alone, I often play a mixed version of the song.</li>
+        </ul>
+        <p>
+          Sometimes I play it on repeat for hours. It puts me into a mental state where I feel confident and centred.
+        </p>
+
+        <h3>The best things of 2025 for me</h3>
+        <ul>
+          <li><strong>Getting more big sponsors:</strong> I am proud that more brands decided to support me as an athlete.</li>
+          <li><strong>Becoming an official firefighter:</strong> I received my pager when I turned 18, which was a huge step in responsibility.</li>
+          <li><strong>Great fights and competitions:</strong> I had several strong performances in BJJ and continued growing as a fighter.</li>
+          <li><strong>Signing with my first agency:</strong> A professional agency now helps me manage sponsors and projects.</li>
+          <li><strong>Growing closer with my girlfriend:</strong> We got together just before 2025, and this year we became even closer. She supported me through competitions, injuries, and of course with food.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENTRY 10 -->
+    <section id="entry10" class="entry">
+      <div class="entry-inner">
+        <div class="entry-header">
+          <div class="entry-title">Portfolio Entry #10 – 2025 Photo Dump</div>
+          <div class="entry-meta">Fourteen snapshots from my year</div>
+        </div>
+
+        <span class="tag tag--highlight">Freestyle</span>
+        <span class="tag">Photos</span>
+
+        <p>
+          This is a small photo dump of my year 2025: training sessions, competitions, moments with my girlfriend,
+          firefighter life, and everyday chaos. On the real website, each box below can be replaced by a real
+          photo from my camera roll.
+        </p>
+
+        <div class="gallery">
+          <!-- Replace these with your real images, e.g. src="images/01-bjj-competition.jpg" -->
+          <div class="gallery-item">
+            <span>Photo 1 – BJJ training</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 2 – Competition moment</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 3 – Running session</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 4 – Firefighter / pager</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 5 – Gym / strength</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 6 – With my girlfriend</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 7 – Family or friends</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 8 – Sponsor product</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 9 – Training alone</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 10 – Food / meal prep</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 11 – Travel / trip</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 12 – Fire station or truck</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 13 – Funny moment</span>
+          </div>
+          <div class="gallery-item">
+            <span>Photo 14 – End of year reflection</span>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          To use this section in reality, just replace each box with an
+          <code>&lt;img src="your-photo.jpg" alt="description"&gt;</code> element.
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  English Portfolio 2025 – compiled from class tasks, training experiences, and real life.
+</footer>
+</body>
+</html>
